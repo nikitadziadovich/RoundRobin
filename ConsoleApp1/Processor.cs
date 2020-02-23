@@ -1,14 +1,12 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 
 namespace ConsoleApp1
 {
     public class Processor
     {
         private readonly Queue<Process> _goingQueue;
-        private int _currentTime;
+        private int _currentQuantum;
         private int _leftQuanta;
         private readonly int _quantaPerProcess;
         private readonly List<Process> _allProcesses;
@@ -22,7 +20,7 @@ namespace ConsoleApp1
             _quantaPerProcess = quantaPerProcess;
             _allProcesses = new List<Process>(processes);
             _remainingProcesses = new List<Process>(processes);
-            _currentTime = Zero;
+            _currentQuantum = Zero;
             _processesCount = processes.Count;
             _goingQueue = new Queue<Process>();
             ResultMatrix = new List<char[]>();
@@ -50,12 +48,12 @@ namespace ConsoleApp1
 
         private void Tact()
         {
-            _currentTime++;
+            _currentQuantum++;
         }
 
         private void CheckIsReady(Process process)
         {
-            if (process.StartTime < _currentTime && process.Status == ProcessStatus.Waits)
+            if (process.StartTime < _currentQuantum && process.Status == ProcessStatus.Waits)
             {
                 _goingQueue.Enqueue(process);
                 process.Status = ProcessStatus.Ready;

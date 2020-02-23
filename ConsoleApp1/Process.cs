@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace ConsoleApp1
 {
     public class Process
@@ -10,9 +8,9 @@ namespace ConsoleApp1
 
         public Process(int startTime, int durationTime)
         {
-            this.StartTime = startTime;
-            this.DurationTime = durationTime;
-            this.Status = ProcessStatus.Waits;
+            StartTime = startTime;
+            DurationTime = durationTime;
+            Status = ProcessStatus.Waits;
         }
 
         public override string ToString()
