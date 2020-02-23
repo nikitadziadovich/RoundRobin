@@ -1,0 +1,11 @@
+/home/ITRANSITION.CORP/n.dzyadovich/labs/c#/2/ConsoleApp1/ConsoleApp1/bin/Debug/netcoreapp3.1/ConsoleApp1
+/home/ITRANSITION.CORP/n.dzyadovich/labs/c#/2/ConsoleApp1/ConsoleApp1/bin/Debug/netcoreapp3.1/ConsoleApp1.deps.json
+/home/ITRANSITION.CORP/n.dzyadovich/labs/c#/2/ConsoleApp1/ConsoleApp1/bin/Debug/netcoreapp3.1/ConsoleApp1.runtimeconfig.json
+/home/ITRANSITION.CORP/n.dzyadovich/labs/c#/2/ConsoleApp1/ConsoleApp1/bin/Debug/netcoreapp3.1/ConsoleApp1.runtimeconfig.dev.json
+/home/ITRANSITION.CORP/n.dzyadovich/labs/c#/2/ConsoleApp1/ConsoleApp1/bin/Debug/netcoreapp3.1/ConsoleApp1.dll
+/home/ITRANSITION.CORP/n.dzyadovich/labs/c#/2/ConsoleApp1/ConsoleApp1/bin/Debug/netcoreapp3.1/ConsoleApp1.pdb
+/home/ITRANSITION.CORP/n.dzyadovich/labs/c#/2/ConsoleApp1/ConsoleApp1/obj/Debug/netcoreapp3.1/ConsoleApp1.csprojAssemblyReference.cache
+/home/ITRANSITION.CORP/n.dzyadovich/labs/c#/2/ConsoleApp1/ConsoleApp1/obj/Debug/netcoreapp3.1/ConsoleApp1.AssemblyInfoInputs.cache
+/home/ITRANSITION.CORP/n.dzyadovich/labs/c#/2/ConsoleApp1/ConsoleApp1/obj/Debug/netcoreapp3.1/ConsoleApp1.AssemblyInfo.cs
+/home/ITRANSITION.CORP/n.dzyadovich/labs/c#/2/ConsoleApp1/ConsoleApp1/obj/Debug/netcoreapp3.1/ConsoleApp1.dll
+/home/ITRANSITION.CORP/n.dzyadovich/labs/c#/2/ConsoleApp1/ConsoleApp1/obj/Debug/netcoreapp3.1/ConsoleApp1.pdb
