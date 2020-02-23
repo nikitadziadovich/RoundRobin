@@ -2,20 +2,41 @@ namespace ConsoleApp1
 {
     public class Process
     {
-        public int StartTime { get; }
+        private readonly int _startTime;
+        private ProcessStatus _status;
+        
         public int DurationTime { get; set; }
-        public ProcessStatus Status { get; set; }
 
         public Process(int startTime, int durationTime)
         {
-            StartTime = startTime;
+            _startTime = startTime;
             DurationTime = durationTime;
-            Status = ProcessStatus.Waits;
+            _status = ProcessStatus.Waits;
+        }
+
+        public void Start()
+        {
+            _status = ProcessStatus.Going;
+        }
+
+        public void GetReady()
+        {
+            _status = ProcessStatus.Ready;
+        }
+
+        public void End()
+        {
+            _status = ProcessStatus.Done;
+        }
+
+        public bool IsReadyToStart(int currentQuantum)
+        {
+            return _startTime < currentQuantum && _status == ProcessStatus.Waits;
         }
 
         public override string ToString()
         {
-            switch (Status)
+            switch (_status)
             {
                 case ProcessStatus.Ready: return "r"; 
                 case ProcessStatus.Going: return "g";

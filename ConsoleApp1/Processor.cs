@@ -53,10 +53,10 @@ namespace ConsoleApp1
 
         private void CheckIsReady(Process process)
         {
-            if (process.StartTime < _currentQuantum && process.Status == ProcessStatus.Waits)
+            if (process.IsReadyToStart(_currentQuantum))
             {
                 _goingQueue.Enqueue(process);
-                process.Status = ProcessStatus.Ready;
+                process.GetReady();
             }
         }
 
@@ -65,7 +65,7 @@ namespace ConsoleApp1
             if (_goingQueue.TryDequeue(out Process firstProcess))
             {
                 _goingQueue.Enqueue(firstProcess);
-                firstProcess.Status = ProcessStatus.Ready;
+                firstProcess.GetReady();
                 ResetQuantum();
             }
         }
@@ -74,7 +74,7 @@ namespace ConsoleApp1
         {
             if (_goingQueue.TryPeek(out Process currentProcess))
             {
-                currentProcess.Status = ProcessStatus.Going;
+                currentProcess.Start();
                 currentProcess.DurationTime--;
                 _leftQuanta--;
             }
@@ -82,15 +82,12 @@ namespace ConsoleApp1
 
         private void CheckIsProcessEnded()
         {
-            if (_goingQueue.TryPeek(out Process currentProcess))
+            if (_goingQueue.TryPeek(out Process currentProcess) && currentProcess.DurationTime == Zero)
             {
-                if (currentProcess.DurationTime == Zero)
-                {
-                    _goingQueue.Dequeue();
-                    _remainingProcesses.Remove(currentProcess);
-                    currentProcess.Status = ProcessStatus.Done;
-                    ResetQuantum();
-                }
+                _goingQueue.Dequeue();
+                _remainingProcesses.Remove(currentProcess);
+                currentProcess.End();
+                ResetQuantum();
             }
         }
 
